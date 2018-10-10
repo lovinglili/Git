@@ -1,0 +1,60 @@
+git 和github之间是通过SSH加密传输的
+1：打开终端配置SSH，创建SSH Key：ssh-keygen -t rsa -C "youremail"   一路回车就好；主目录下有.ssh文件，且ssh文件下面有id_rsa和id_rsa.pub就安装成功；
+2:打开github，找到SSH Key，点Add SSH Key,填上title，在Key里面输入id_rsa.pub文件的内容；可以填写多个Key;
+3:github靠这样来识别你推送的提交时你推送的，不是别人冒充的，git支持SSH协议；github只要知道了你的公钥，就可以确认只有你自己才能推送；
+
+
+本地仓库和远程仓库关联并推送：；
+
+创建一个文件夹，然后：
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/lovinglili/li.git  //将lovinglili改成自己仓库的名字；由于我配置了SSH，所以github只能识别我电脑推送的；origin就是我远程库的名字，git的默认
+git push -u origin master         //将本地库当前分支master推送到远程库，由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+从现在起，只要你本地做了提交，可以使用命令：git push origin master  将最新的修改提交上去
+
+注意：如果远程仓库创建的时候勾选了Initialize this repository with a README，则在push之前 要：git pull --rebase origin master;将远端的readme.md文件拉下来；
+
+创建分支并提交到远程：
+
+1，git branch aaa;
+2,git push origin aaa;
+3.git checkout aaa;
+4,创建文件，修改文件，并提交
+（5，git checkout master ;6,git merge;合并 7，git branch -d aaa  删除分支aaa;-d换成-D表示强制删除）或者
+5，git push origin aaa;分支aaa的内容会提交到远端仓库的分支aaa上面；
+
+将远程的分支拉下来：
+
+ 
+1,git  checkout --track origin/two   two是远端的一个分支,会出现一个错：fatal: 'origin/testbranch' is not a commit and a branch 'testbranch' cannot be created from it
+2,git fetch origin  同步远程的数据到服务器
+3，git checkout --track origin/two是远程仓库的一个分支
+4，同上面的4及4之后的操作；
+
+
+创建远程连接的情况下，push前，要add, commit ;
+
+
+创建远程库，并克隆到本地：克隆下来的文件不用再建立连接，克隆下来远程库的名字叫origin
+
+
+1.登录github创建一个仓库勾选Initialize this repository with a README，会自动生产一个readme文件
+2.使用git clone克隆一个本地库：git clone https://github.com/lovinglili/mybloog.git
+3.修改clone下来的仓库内容
+4.之后 git add .  ; git commit...   ; git push...即可；
+
+
+
+
+
+
+
+参与一个开源项目：
+
+1，访问项目主页，点击Fork,就在自己账号下克隆了一个仓库
+2.从自己仓库下克隆到本地
+3，修改之后进行push
+4，发起pull request，看对方能否接受你的修改了

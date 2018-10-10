@@ -1,0 +1,105 @@
+工作区和暂存区:
+
+电脑里面看到的目录就是工作区
+
+工作区又一个隐藏的目录.git，这个是git的版本库，不是工作区。ls -ah可以查询到。
+git版本库里面又一个叫stage的暂存区，git为我们自动创建第一个分支master，以及指向master的一个指针HEAD（当前分支）。
+
+
+
+
+管理修改：
+
+git跟踪并管理的是修改，并不是文件。
+加入又一个文件已经提交过，接下来：
+ 第一次修改---》git add .----》第二次修改----》·git commit -m "";
+ 
+git status查看得到第二次修改的不会提交上去，因为git commit是将暂存区的内容提交到分支上面。
+
+ 第一次修改---》git add .----》第二次修改----》git add .--->git commit -m "";
+这样两次修改就能提交了。
+
+
+
+
+撤销修改:
+
+git add 前使用git status 后会出现：
+修改还没又提交到暂存区：git checkout -- filename;
+
+git add 后使用git status 后会出现：
+修改已经提交到暂存区：git reste HEAD filename;会将暂存区中的修改退回到工作区，在执行工作区的撤回修改命令即可
+
+若是提交到版本库 没有提交到远程，用git reset --hard HEAD^返回上个版本就行；
+
+
+删除文件：
+在git 里面删除也是一个修改的操作；
+
+已经提交的版本库的文件
+rm 文件名  //删除的是文件管理器中的该文件
+
+此时工作区和版本库不一致，可以撤销修改恢复删除的文件。git checkout -- 文件名
+
+删除版本库中的文件：
+git rm 文件名  
+git commit -m ""
+
+
+
+
+分支：
+
+创建分支就相当于创建了一个second指针，然后将HEAD指针指向创建的指针，然后每次提交和修改都是针对新创建的second分支，master分支保持不动，合并的时候就将master指向second的当前提交，再把second指针删掉即可
+
+
+分支创建与合并：
+创建分支：git branch second
+切换分支:git checkout second
+创建并切换分支:git checkout -b second
+
+查看当前分支：git branch
+
+从second分支切换到master分支：git checkout master   在second分支下的修改并提交之后，修改的内容不会在master分支下查看到
+
+合并分支（此时在master分支下且master分支在创建并切换second分支后未做修改提交）:git merge second   （git merge用于合并指定分支到当前分支，这时候second下的修改在master下也能看到）
+删除分支：git branch -d dev
+
+
+创建second分支并切换后,对内容进行更改然后提交，然后切换到master下，对master下的内容进行修改，然后提交；之后再将master和second合并，这时候他俩都有各自的提交，这样就产生了冲突。手动修改后提交就行，之后就可以删除second分支。  git log --graph --pretty=oneline --abbrev-commit可以看到分支合并图；
+
+分支冲突：
+1.a和b分支修改不同位置文件时
+dev合并完a之后，b分支先git pull拉取最新代码，再使用dev合并b就没有冲突了
+2.a和b修改相同位置文件时
+dev合并完a之后，b分支先git pull拉取最新代码，这时候就会有冲突，手动解决一下，dev再次merge b分支就不会冲突了
+
+
+
+
+
+
+返回到版本：
+git log显示从近到远的提交日志
+git log --pretty=oneline 简洁的提交包括commit id 和描述
+
+HEAD指向当前版本
+返回上一版本：git reset --hard HEAD^
+返回上上版本：git reset --hard HEAD^^;
+返回后，之前的最新版本不显示了，要想回到最新的版本使用：git reset --hard commit id（前几位就可以）；
+查看版本号：git reflog  ;  git reflog 记录你的每次命令；
+
+
+warning: LF will be replaced by CRLF in lihua.txt.
+解决方法：
+
+git config core.autocrlf false
+
+LF：linux  下的换行符
+CRLF:windows下的换行符
+
+vim打开文件时，会产生一个.swp文件。文件异常退出时候,可以依靠该文件进行恢复源文件。正常退出的时候该文件会自动被删除
+
+git status 时刻掌握仓库当前的状态
+
+git diff  文件名   查看上次是怎么修改该文件的(add commit后的文件查询不到）
