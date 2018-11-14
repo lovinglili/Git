@@ -1,60 +1,60 @@
-git ºÍgithubÖ®¼äÊÇÍ¨¹ıSSH¼ÓÃÜ´«ÊäµÄ
-1£º´ò¿ªÖÕ¶ËÅäÖÃSSH£¬´´½¨SSH Key£ºssh-keygen -t rsa -C "youremail"   Ò»Â·»Ø³µ¾ÍºÃ£»Ö÷Ä¿Â¼ÏÂÓĞ.sshÎÄ¼ş£¬ÇÒsshÎÄ¼şÏÂÃæÓĞid_rsaºÍid_rsa.pub¾Í°²×°³É¹¦£»
-2:´ò¿ªgithub£¬ÕÒµ½SSH Key£¬µãAdd SSH Key,ÌîÉÏtitle£¬ÔÚKeyÀïÃæÊäÈëid_rsa.pubÎÄ¼şµÄÄÚÈİ£»¿ÉÒÔÌîĞ´¶à¸öKey;
-3:github¿¿ÕâÑùÀ´Ê¶±ğÄãÍÆËÍµÄÌá½»Ê±ÄãÍÆËÍµÄ£¬²»ÊÇ±ğÈËÃ°³äµÄ£¬gitÖ§³ÖSSHĞ­Òé£»githubÖ»ÒªÖªµÀÁËÄãµÄ¹«Ô¿£¬¾Í¿ÉÒÔÈ·ÈÏÖ»ÓĞÄã×Ô¼º²ÅÄÜÍÆËÍ£»
+git å’Œgithubä¹‹é—´æ˜¯é€šè¿‡SSHåŠ å¯†ä¼ è¾“çš„
+1ï¼šæ‰“å¼€ç»ˆç«¯é…ç½®SSHï¼Œåˆ›å»ºSSH Keyï¼šssh-keygen -t rsa -C "youremail"   ä¸€è·¯å›è½¦å°±å¥½ï¼›ä¸»ç›®å½•ä¸‹æœ‰.sshæ–‡ä»¶ï¼Œä¸”sshæ–‡ä»¶ä¸‹é¢æœ‰id_rsaå’Œid_rsa.pubå°±å®‰è£…æˆåŠŸï¼›
+2:æ‰“å¼€githubï¼Œæ‰¾åˆ°SSH Keyï¼Œç‚¹Add SSH Key,å¡«ä¸Štitleï¼Œåœ¨Keyé‡Œé¢è¾“å…¥id_rsa.pubæ–‡ä»¶çš„å†…å®¹ï¼›å¯ä»¥å¡«å†™å¤šä¸ªKey;
+3:githubé è¿™æ ·æ¥è¯†åˆ«ä½ æ¨é€çš„æäº¤æ—¶ä½ æ¨é€çš„ï¼Œä¸æ˜¯åˆ«äººå†’å……çš„ï¼Œgitæ”¯æŒSSHåè®®ï¼›githubåªè¦çŸ¥é“äº†ä½ çš„å…¬é’¥ï¼Œå°±å¯ä»¥ç¡®è®¤åªæœ‰ä½ è‡ªå·±æ‰èƒ½æ¨é€ï¼›
 
 
-±¾µØ²Ö¿âºÍÔ¶³Ì²Ö¿â¹ØÁª²¢ÍÆËÍ£º£»
+æœ¬åœ°ä»“åº“å’Œè¿œç¨‹ä»“åº“å…³è”å¹¶æ¨é€ï¼šï¼›
 
-´´½¨Ò»¸öÎÄ¼ş¼Ğ£¬È»ºó£º
+åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹ï¼Œç„¶åï¼š
 git init
 git add .
 git commit -m "first commit"
-git remote add origin https://github.com/lovinglili/li.git  //½«lovinglili¸Ä³É×Ô¼º²Ö¿âµÄÃû×Ö£»ÓÉÓÚÎÒÅäÖÃÁËSSH£¬ËùÒÔgithubÖ»ÄÜÊ¶±ğÎÒµçÄÔÍÆËÍµÄ£»origin¾ÍÊÇÎÒÔ¶³Ì¿âµÄÃû×Ö£¬gitµÄÄ¬ÈÏ
-git push -u origin master         //½«±¾µØ¿âµ±Ç°·ÖÖ§masterÍÆËÍµ½Ô¶³Ì¿â£¬ÓÉÓÚÔ¶³Ì¿âÊÇ¿ÕµÄ£¬ÎÒÃÇµÚÒ»´ÎÍÆËÍmaster·ÖÖ§Ê±£¬¼ÓÉÏÁË-u²ÎÊı£¬Git²»µ«»á°Ñ±¾µØµÄmaster·ÖÖ§ÄÚÈİÍÆËÍµÄÔ¶³ÌĞÂµÄmaster·ÖÖ§£¬»¹»á°Ñ±¾µØµÄmaster·ÖÖ§ºÍÔ¶³ÌµÄmaster·ÖÖ§¹ØÁªÆğÀ´£¬ÔÚÒÔºóµÄÍÆËÍ»òÕßÀ­È¡Ê±¾Í¿ÉÒÔ¼ò»¯ÃüÁî¡£
+git remote add origin https://github.com/lovinglili/li.git  //å°†lovingliliæ”¹æˆè‡ªå·±ä»“åº“çš„åå­—ï¼›ç”±äºæˆ‘é…ç½®äº†SSHï¼Œæ‰€ä»¥githubåªèƒ½è¯†åˆ«æˆ‘ç”µè„‘æ¨é€çš„ï¼›originå°±æ˜¯æˆ‘è¿œç¨‹åº“çš„åå­—ï¼Œgitçš„é»˜è®¤
+git push -u origin master         //å°†æœ¬åœ°åº“å½“å‰åˆ†æ”¯masteræ¨é€åˆ°è¿œç¨‹åº“ï¼Œç”±äºè¿œç¨‹åº“æ˜¯ç©ºçš„ï¼Œæˆ‘ä»¬ç¬¬ä¸€æ¬¡æ¨é€masteråˆ†æ”¯æ—¶ï¼ŒåŠ ä¸Šäº†-uå‚æ•°ï¼ŒGitä¸ä½†ä¼šæŠŠæœ¬åœ°çš„masteråˆ†æ”¯å†…å®¹æ¨é€çš„è¿œç¨‹æ–°çš„masteråˆ†æ”¯ï¼Œè¿˜ä¼šæŠŠæœ¬åœ°çš„masteråˆ†æ”¯å’Œè¿œç¨‹çš„masteråˆ†æ”¯å…³è”èµ·æ¥ï¼Œåœ¨ä»¥åçš„æ¨é€æˆ–è€…æ‹‰å–æ—¶å°±å¯ä»¥ç®€åŒ–å‘½ä»¤ã€‚
 
-´ÓÏÖÔÚÆğ£¬Ö»ÒªÄã±¾µØ×öÁËÌá½»£¬¿ÉÒÔÊ¹ÓÃÃüÁî£ºgit push origin master  ½«×îĞÂµÄĞŞ¸ÄÌá½»ÉÏÈ¥
+ä»ç°åœ¨èµ·ï¼Œåªè¦ä½ æœ¬åœ°åšäº†æäº¤ï¼Œå¯ä»¥ä½¿ç”¨å‘½ä»¤ï¼šgit push origin master  å°†æœ€æ–°çš„ä¿®æ”¹æäº¤ä¸Šå»
 
-×¢Òâ£ºÈç¹ûÔ¶³Ì²Ö¿â´´½¨µÄÊ±ºò¹´Ñ¡ÁËInitialize this repository with a README£¬ÔòÔÚpushÖ®Ç° Òª£ºgit pull --rebase origin master;½«Ô¶¶ËµÄreadme.mdÎÄ¼şÀ­ÏÂÀ´£»
+æ³¨æ„ï¼šå¦‚æœè¿œç¨‹ä»“åº“åˆ›å»ºçš„æ—¶å€™å‹¾é€‰äº†Initialize this repository with a READMEï¼Œåˆ™åœ¨pushä¹‹å‰ è¦ï¼šgit pull --rebase origin master;å°†è¿œç«¯çš„readme.mdæ–‡ä»¶æ‹‰ä¸‹æ¥ï¼›
 
-´´½¨·ÖÖ§²¢Ìá½»µ½Ô¶³Ì£º
+åˆ›å»ºåˆ†æ”¯å¹¶æäº¤åˆ°è¿œç¨‹ï¼š
 
-1£¬git branch aaa;
+1ï¼Œgit branch aaa;
 2,git push origin aaa;
 3.git checkout aaa;
-4,´´½¨ÎÄ¼ş£¬ĞŞ¸ÄÎÄ¼ş£¬²¢Ìá½»
-£¨5£¬git checkout master ;6,git merge;ºÏ²¢ 7£¬git branch -d aaa  É¾³ı·ÖÖ§aaa;-d»»³É-D±íÊ¾Ç¿ÖÆÉ¾³ı£©»òÕß
-5£¬git push origin aaa;·ÖÖ§aaaµÄÄÚÈİ»áÌá½»µ½Ô¶¶Ë²Ö¿âµÄ·ÖÖ§aaaÉÏÃæ£»
+4,åˆ›å»ºæ–‡ä»¶ï¼Œä¿®æ”¹æ–‡ä»¶ï¼Œå¹¶æäº¤
+ï¼ˆ5ï¼Œgit checkout master ;6,git merge;åˆå¹¶ 7ï¼Œgit branch -d aaa  åˆ é™¤åˆ†æ”¯aaa;-dæ¢æˆ-Dè¡¨ç¤ºå¼ºåˆ¶åˆ é™¤ï¼‰æˆ–è€…
+5ï¼Œgit push origin aaa;åˆ†æ”¯aaaçš„å†…å®¹ä¼šæäº¤åˆ°è¿œç«¯ä»“åº“çš„åˆ†æ”¯aaaä¸Šé¢ï¼›
 
-½«Ô¶³ÌµÄ·ÖÖ§À­ÏÂÀ´£º
+å°†è¿œç¨‹çš„åˆ†æ”¯æ‹‰ä¸‹æ¥ï¼š
 
  
-1,git  checkout --track origin/two   twoÊÇÔ¶¶ËµÄÒ»¸ö·ÖÖ§,»á³öÏÖÒ»¸ö´í£ºfatal: 'origin/testbranch' is not a commit and a branch 'testbranch' cannot be created from it
-2,git fetch origin  Í¬²½Ô¶³ÌµÄÊı¾İµ½·şÎñÆ÷
-3£¬git checkout --track origin/twoÊÇÔ¶³Ì²Ö¿âµÄÒ»¸ö·ÖÖ§
-4£¬Í¬ÉÏÃæµÄ4¼°4Ö®ºóµÄ²Ù×÷£»
+1,git  checkout --track origin/two   twoæ˜¯è¿œç«¯çš„ä¸€ä¸ªåˆ†æ”¯,ä¼šå‡ºç°ä¸€ä¸ªé”™ï¼šfatal: 'origin/testbranch' is not a commit and a branch 'testbranch' cannot be created from it
+2,git fetch origin  åŒæ­¥è¿œç¨‹çš„æ•°æ®åˆ°æœåŠ¡å™¨
+3ï¼Œgit checkout --track origin/twoæ˜¯è¿œç¨‹ä»“åº“çš„ä¸€ä¸ªåˆ†æ”¯
+4ï¼ŒåŒä¸Šé¢çš„4åŠ4ä¹‹åçš„æ“ä½œï¼›
 
 
-´´½¨Ô¶³ÌÁ¬½ÓµÄÇé¿öÏÂ£¬pushÇ°£¬Òªadd, commit ;
+åˆ›å»ºè¿œç¨‹è¿æ¥çš„æƒ…å†µä¸‹ï¼Œpushå‰ï¼Œè¦add, commit ;
 
 
-´´½¨Ô¶³Ì¿â£¬²¢¿ËÂ¡µ½±¾µØ£º¿ËÂ¡ÏÂÀ´µÄÎÄ¼ş²»ÓÃÔÙ½¨Á¢Á¬½Ó£¬¿ËÂ¡ÏÂÀ´Ô¶³Ì¿âµÄÃû×Ö½Ğorigin
+åˆ›å»ºè¿œç¨‹åº“ï¼Œå¹¶å…‹éš†åˆ°æœ¬åœ°ï¼šå…‹éš†ä¸‹æ¥çš„æ–‡ä»¶ä¸ç”¨å†å»ºç«‹è¿æ¥ï¼Œå…‹éš†ä¸‹æ¥è¿œç¨‹åº“çš„åå­—å«origin
 
 
-1.µÇÂ¼github´´½¨Ò»¸ö²Ö¿â¹´Ñ¡Initialize this repository with a README£¬»á×Ô¶¯Éú²úÒ»¸öreadmeÎÄ¼ş
-2.Ê¹ÓÃgit clone¿ËÂ¡Ò»¸ö±¾µØ¿â£ºgit clone https://github.com/lovinglili/mybloog.git
-3.ĞŞ¸ÄcloneÏÂÀ´µÄ²Ö¿âÄÚÈİ
-4.Ö®ºó git add .  ; git commit...   ; git push...¼´¿É£»
-
-
-
+1.ç™»å½•githubåˆ›å»ºä¸€ä¸ªä»“åº“å‹¾é€‰Initialize this repository with a READMEï¼Œä¼šè‡ªåŠ¨ç”Ÿäº§ä¸€ä¸ªreadmeæ–‡ä»¶
+2.ä½¿ç”¨git cloneå…‹éš†ä¸€ä¸ªæœ¬åœ°åº“ï¼šgit clone https://github.com/lovinglili/mybloog.git
+3.ä¿®æ”¹cloneä¸‹æ¥çš„ä»“åº“å†…å®¹
+4.ä¹‹å git add .  ; git commit...   ; git push...å³å¯ï¼›
 
 
 
 
-²ÎÓëÒ»¸ö¿ªÔ´ÏîÄ¿£º
 
-1£¬·ÃÎÊÏîÄ¿Ö÷Ò³£¬µã»÷Fork,¾ÍÔÚ×Ô¼ºÕËºÅÏÂ¿ËÂ¡ÁËÒ»¸ö²Ö¿â
-2.´Ó×Ô¼º²Ö¿âÏÂ¿ËÂ¡µ½±¾µØ
-3£¬ĞŞ¸ÄÖ®ºó½øĞĞpush
-4£¬·¢Æğpull request£¬¿´¶Ô·½ÄÜ·ñ½ÓÊÜÄãµÄĞŞ¸ÄÁË
+
+
+å‚ä¸ä¸€ä¸ªå¼€æºé¡¹ç›®ï¼š
+
+1ï¼Œè®¿é—®é¡¹ç›®ä¸»é¡µï¼Œç‚¹å‡»Fork,å°±åœ¨è‡ªå·±è´¦å·ä¸‹å…‹éš†äº†ä¸€ä¸ªä»“åº“
+2.ä»è‡ªå·±ä»“åº“ä¸‹å…‹éš†åˆ°æœ¬åœ°
+3ï¼Œä¿®æ”¹ä¹‹åè¿›è¡Œpush
+4ï¼Œå‘èµ·pull requestï¼Œçœ‹å¯¹æ–¹èƒ½å¦æ¥å—ä½ çš„ä¿®æ”¹äº†
