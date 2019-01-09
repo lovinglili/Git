@@ -35,6 +35,9 @@ git push -u origin master         //将本地库当前分支master推送到远�
 4，同上面的4及4之后的操作；
 
 
+
+也可以创建一个新的和远端一样的分支，然后在此分支上将远端代码拉下来；git pull origin 分支名
+
 创建远程连接的情况下，push前，要add, commit ;
 
 
